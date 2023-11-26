@@ -1,0 +1,21 @@
+
+/* css para todos los botones*/
+
+.boton_componente {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #f10c6c; /* Borde circular de color (en este caso, azul) */
+    border-radius: 50px; /* Hace que el borde sea circular */
+    color: #f10c6c; /* Color del texto */
+    padding: 1vh 2vh; /* Espaciado interno (ajusta según tus necesidades) */
+    text-align: center; /* Centra el texto horizontalmente */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    display: inline-block; /* Hace que el botón ocupe solo el ancho necesario */
+    font-size: calc(1.2px + 1vw); /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición suave */
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+  
+  .boton_componente:hover {
+    background-color: white; /* Cambia el color de fondo al pasar el mouse */
+  }

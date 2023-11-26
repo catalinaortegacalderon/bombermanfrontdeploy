@@ -1,0 +1,12 @@
+.bomb-cell {
+    width: 6vh;
+    height: 6vh;
+}
+
+.bomb-tablero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh;
+}

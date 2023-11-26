@@ -1,0 +1,25 @@
+.partida {
+    padding-left: 1%;
+    align-items: center;
+    font-size: calc(3px + 1vw);
+}
+
+.fila1, .fila2, .fila3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fila2 {
+    justify-content: center;
+}
+
+.partida h1 {
+    color: white;
+    margin-left: 20px;
+}

@@ -1,0 +1,33 @@
+.rectangulo-jugador {
+    background-color: #FE0964;
+    border-radius: 20%;
+    font-size: large;
+    text-align: center;
+    border: #FE0964 2vh solid;
+    width: 10vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jugador-cell {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    align-items: center;
+}
+
+.titulo-jugador {
+    color: #FE0964;
+    font-size: calc(3px + 1.5vw);
+    margin: 0%;
+}
+
+.titulo-jugador p {
+    margin: 0;
+}
+
+.activo {
+    margin-top: 20vh;
+}

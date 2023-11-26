@@ -1,0 +1,48 @@
+
+
+.box-arriba {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 150px;
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #FE0964;
+    font-size: calc(6px + 1vw);
+}
+
+.contenido-derecha {
+    display: flex;
+    align-items: center;
+}
+
+.contenido-izquierda {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contenido-izquierda img {
+    display: block;
+    width: 15%;
+    height: auto;
+}
+
+
+.box-abajo {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vw 10vw;
+    width: 80vw;
+    height: 40vh;
+}
+
+a {
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.CentrarBoton{
+    text-align: center;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}

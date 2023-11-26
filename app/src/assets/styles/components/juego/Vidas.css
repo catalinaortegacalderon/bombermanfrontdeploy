@@ -1,0 +1,12 @@
+.vida-cell {
+    width: 5vh;
+    height: 5vh;
+}
+
+.vida-tablero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh;
+}

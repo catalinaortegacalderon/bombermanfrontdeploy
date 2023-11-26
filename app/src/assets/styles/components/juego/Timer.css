@@ -1,0 +1,26 @@
+.timer {
+    color:#FE0964;
+    margin: 3vh;
+}
+
+.titulo {
+    margin: 0%;
+}
+
+.rectangulo {
+    background-color: #0D1284;
+    border-radius: 20%;
+    font-size: large;
+    color: #FE0964;
+    text-align: center;
+    border:#0D1284 1.5vh solid;
+    border-left: #0D1284 2vh solid;
+    border-right: #0D1284 2vh solid;
+}
+
+.titulo p,
+.rectangulo p {
+    margin: 0;
+    font-size: calc(3px + 1.5vw);
+    font-family: "Lucida Console", Monaco, monospace;
+}

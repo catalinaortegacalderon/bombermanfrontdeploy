@@ -1,0 +1,311 @@
+/* Cosas del landing page, iniciar partida, y logged page*/
+body {
+    margin : 0;
+    background: linear-gradient(to right, #9000ff, #00d9ff);
+    height: 100vh;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.contenedor-landing {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 90vh;
+}
+
+.box {
+    width: 50%;
+    padding: 10vh;
+}
+
+.izquierda {
+    font-size: calc(1.2px + 1vw);
+}
+
+.derecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.derecha img {
+    width: 75%;
+    height: auto;
+}
+
+.-botones-y-titulo {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.contenedor-botones-y-titulo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vw;
+    height: 7vh;
+    background-color: blueviolet;
+    color: white;
+    text-decoration: none;
+}
+
+.contenedor-botones-y-titulo h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    color: white;
+    text-decoration: none;
+    font-size: calc(1.2px + 2vw);
+}
+
+a:hover {
+    background-color: rgb(234, 75, 240);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contenedor-botones-y-titulo .boton-color-1 {
+    background-color: #261AB2;
+}
+.contenedor-botones-y-titulo .boton-color-1:hover {
+    background-color: #4233e4;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contenedor-botones-y-titulo .boton-color-2 {
+    background-color: #421AB2;
+}
+.contenedor-botones-y-titulo .boton-color-2:hover {
+    background-color: #663ae0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contenedor-botones-y-titulo .boton-color-3 {
+    background-color: #661AB2;
+}
+.contenedor-botones-y-titulo .boton-color-3:hover {
+    background-color: #8427e2;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contenedor-botones-y-titulo .boton-color-4 {
+    background-color: #861AB2;
+}
+.contenedor-botones-y-titulo .boton-color-4:hover {
+    background-color: #a93ad5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contenedor-botones-y-titulo .boton-color-5 {
+    background-color: #B21AA3;
+}
+.contenedor-botones-y-titulo .boton-color-5:hover {
+    background-color: #c551ba;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Cosas del componente footer*/
+
+.estilo_footer {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 10vh; /* Opcional: Ajusta la altura según tus necesidades */
+    width: 100%;
+}
+
+.estilo_footer p {
+    justify-content: center;
+}
+
+
+/* Cosas de los lobbys login y del register*/
+
+.login {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #FE0964;
+}
+
+.input_login {
+    margin: 2vh;
+    font-size: calc(1px + 0.8vw);
+}
+
+.input_login input {
+    font-size: calc(1px + 0.8vw);
+    width: 30vw;
+    height: 4vh;
+}
+
+.input_login p {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.boton-ingresar {
+    display: flex;
+    justify-content: center;
+    margin: 2vh;
+}
+
+.contenedor-iniciosesion {
+    margin: 5%;
+    padding: 2.5%;
+    border: 5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    font-size: calc(1px + 0.8vw);
+    width: 60vw;
+    height: 40vh;
+}
+
+.contenedor-registrarse {
+    margin: 5%;
+    padding: 2.5%;
+    border: 5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    font-size: calc(1px + 0.8vw);
+    width: 60vw;
+    height: 60vh;
+}
+
+.contenedor-estadisticas {
+    margin: 5%;
+    padding: 2.5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    width: 50vw;
+    height: 60vh;
+    font-size: calc(1.2px + 1vw);
+    overflow: hidden; /* Para controlar el desbordamiento si es necesario */
+}
+
+.foto {
+    margin: 10px; /* Agrega 10px de espacio alrededor de la división */
+    padding: 20px;
+    justify-content: center; /* centra horizontal */
+    align-items: center; /* centra vertical */
+}
+
+.foto-iniciosesion {
+    margin: 10px;
+    /* Agrega 10px de espacio alrededor de la división */
+    padding: 20px;
+    justify-content: center;
+    /* centra horizontal */
+    align-items: center;
+    /* centra vertical */
+    height: 60vh;
+    width: 60vw;
+}
+
+.contenedor-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    align-items: center;
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    margin: 3.5vh;
+}
+
+.contenedor-botones>* {
+    margin: 0 10px;
+}
+
+.reglas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #FE0964;
+}
+
+.foto-reglas {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-persona {
+    margin: 5%;
+    padding: 2.5%;
+    border: 5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    width: 45vw;
+    font-size: calc(1.2px + 1vw);
+    height: auto;
+    overflow: hidden;
+}
+
+.contenedor-about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenedor-about h1 {
+    color: white;
+}
+
+.contenedor-lobby {
+    margin: 5%;
+    padding: 2.5%;
+    border: 5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    font-size: calc(1px + 0.8vw);
+    width: 60vw;
+    height: 40vh;
+}
+
+.contenedor-lobby-publico {
+    margin: 5%;
+    padding: 2.5%;
+    border: 5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    font-size: calc(1px + 0.8vw);
+    width: 60vw;
+    height: 30vh;
+}
+
+.contenedor-usuario {
+    margin: 5%;
+    padding: 2.5%;
+    border: 5%;
+    background-color: #5E18EB;
+    border-radius: 20px;
+    align-items: center;
+    font-size: calc(1px + 1vw);
+    width: 30vw;
+    height: 35vh;
+    line-height: 1.5;
+}

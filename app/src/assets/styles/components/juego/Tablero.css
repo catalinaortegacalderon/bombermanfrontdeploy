@@ -1,0 +1,10 @@
+.tablero {
+    display: table;
+    padding: 3vh;
+    padding-top: 0%;
+}
+
+.board-row {
+    display: flex;
+    flex-direction: row;
+}

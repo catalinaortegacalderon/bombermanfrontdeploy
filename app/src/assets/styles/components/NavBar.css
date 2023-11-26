@@ -1,0 +1,34 @@
+.container-navbar {
+    display: flex;
+    background-color: rgb(41, 39, 39);
+    color: white;
+    padding: 10px 40px;
+    justify-content: space-between;
+}
+
+/*.derecha {
+    justify-content: derecha
+}
+
+.izquierda {
+    justify-content: right
+}*/
+
+.container-navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.container-navbar a:hover {
+    text-decoration: underline;
+    transition: 1s;
+}
+
+.izquierda-navbar {
+    font-size: calc(10px + 0.5vw);
+}
+
+.derecha-navbar {
+    font-size: calc(10px + 0.5vw);
+}

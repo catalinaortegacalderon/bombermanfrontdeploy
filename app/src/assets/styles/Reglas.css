@@ -1,0 +1,84 @@
+.contenedor-reglas {
+    display: flex;
+    flex-direction: row;
+    min-height: 60vh;
+}
+
+.boton-navegar {
+    display: flex;
+    align-items: center;
+}
+
+.boton-navegar button {
+    width: 10vh;
+    height: 15vh;
+}
+
+.boton-navegar img {
+    width: 100%;
+}
+
+.boton-navegar button {
+    background-color: rgb(83, 211, 141);
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.boton-navegar button:hover {
+    background-color: rgb(74, 191, 226);
+    transition: 0.5s;
+}
+
+.titulo-regla {
+    display: flex;
+    justify-content: center;
+}
+
+.regla-individual {
+    height: 80%;
+}
+
+.contenido-regla {
+    height: 100%;
+}
+
+.contenido-regla p {
+    justify-content: left;
+}
+
+.imagen-bandera {
+    display: flex;
+    justify-content: center;
+    margin: 3vh 0;
+}
+
+.imagen-bandera img {
+    width: 50%;
+}
+
+/* pagina 3 */
+.imagenes-teclas {
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3vh 0;
+}
+
+.contenido-regla li {
+    margin-bottom: 3vh;
+}
+
+
+/* pagina 5 */
+.imagen-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-final img {
+    width: 40%;
+}
+
+
