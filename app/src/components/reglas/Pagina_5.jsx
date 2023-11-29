@@ -1,5 +1,5 @@
-import jugador from '../../assets/images/jugador.png';
-import bandera from '../../assets/images/bandera.png';
+import jugador from '../../../public/images/jugador.png';
+import bandera from '../../../public/images/bandera.png';
 
 export default function Pagina_5() {
   return (

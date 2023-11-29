@@ -1,6 +1,6 @@
 import '../../assets/styles/components/juego/Bombas.css';
 import React, { useContext } from 'react';
-import bombaImg from '../../assets/images/bomba.png';
+import bombaImg from '../../../public/images/bomba.png';
 import { GameContext } from '../../views/Partida';
 
 export default function Bombas() {

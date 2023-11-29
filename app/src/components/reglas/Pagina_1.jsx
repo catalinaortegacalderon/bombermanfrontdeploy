@@ -1,4 +1,4 @@
-import bandera from '../../assets/images/bandera.png';
+import bandera from '../../../public/images/bandera.png';
 
 export default function Pagina_1() {
   return (

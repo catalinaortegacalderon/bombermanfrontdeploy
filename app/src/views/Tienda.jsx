@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import '../assets/styles/Tienda.css';
 import BackButton from '../components/buttons/BackButton';
 import PowerButton from '../components/buttons/PowerButton';
-import jugador from '../assets/images/jugador.png';
-import vida from '../assets/images/vida.png';
-import bomba from '../assets/images/bomba.png';
-import moneda from '../assets/images/moneda.png';
+import jugador from '../../public/images/jugador.png';
+import vida from '../../public/images/vida.png';
+import bomba from '../../public/images/bomba.png';
+import moneda from '../../public/images/moneda.png';
 
 export default function Tienda() {
   const [isLoading, setIsLoading] = useState(true);

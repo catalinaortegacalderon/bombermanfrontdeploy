@@ -16,7 +16,7 @@ export default function Inicio() {
                     </div>
                 </div>
                 <div className='box derecha'>
-                    <img src={'../src/assets/images/logo.png'}/>
+                    <img src={'../public/images/logo.png'}/>
                 </div>
             </div>
         </div>

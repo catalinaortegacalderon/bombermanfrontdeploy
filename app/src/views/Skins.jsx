@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import '../assets/styles/Skins.css'
 import BackButton from '../components/buttons/BackButton'
 import PowerButton from '../components/buttons/PowerButton'
-import logo from '../assets/images/jugador.png'
-import green_check from '../assets/images/green_check.png'
-import moneda from '../assets/images/moneda.png'
+import logo from '../../public/images/jugador.png'
+import green_check from '../../public/images/green_check.png'
+import moneda from '../../public/images/moneda.png'
 import axios from 'axios';
+
+
 // DOCUMENTACION:
 //
 // Si se quiere comprar skin se envia json:
@@ -18,12 +20,17 @@ import axios from 'axios';
 
 
 export default function Skins() {
-    const [isLoading, setIsLoading] = useState(true)
-    const [playerInfo, setPlayerInfo] = useState({})
-    const [skinsInfo, setSkinsInfo] = useState([])
-    const [quantity, setQuantity] = useState(0)
-    const [selectedSkin, setSelectedSkin] = useState({})
-    const [userId, setUserId] = useState(0)
+  const [isLoading, setIsLoading] = useState(true);
+  const [playerInfo, setPlayerInfo] = useState({});
+  const [skinsInfo, setSkinsInfo] = useState({});
+  const [quantity, setQuantity] = useState(0);
+  const [selectedSkin, setSelectedSkin] = useState({});
+  const [userId, setUserId] = useState(0)
+//   const [isLoading, setIsLoading] = useState(true)
+//   const [playerInfo, setPlayerInfo] = useState({})
+//   const [skinsInfo, setSkinsInfo] = useState([])
+//   const [quantity, setQuantity] = useState(0)
+//   const [selectedSkin, setSelectedSkin] = useState({})
     
     
 
@@ -127,9 +134,11 @@ export default function Skins() {
                     axios.post(`${import.meta.env.VITE_BACKEND_URL}/compra`, request)
                 }
             }
-        } else {
+        }
+        else {
             if (playerInfo.monedas < skin.cost) {
-                alert("No tienes suficientes monedas para comprar esta skin. ¡Ve a jugar!")
+                console.log('No tienes suficientes monedas para comprar esta skin. ¡Ve a jugar!');
+                alert("No tienes suficientes monedas para comprar esta skin. ¡Ve a jugar!");
             } else {
                 const comprar = confirm(`¿Quieres comprar la skin ${skin.name}?`);
                     if (comprar) {
@@ -139,6 +148,7 @@ export default function Skins() {
                     request["purchaseInfo"] = selectedSkin;
                     request["id_usuario"] = 2;
                     request["id_personaje"] = skin.id;
+
                     axios.post(`${import.meta.env.VITE_BACKEND_URL}/compras`, request)
                         .then((response) => {
                             console.log('La data es:', response.data)
@@ -151,8 +161,23 @@ export default function Skins() {
                     // y ahora se manda al backend la peticion de compra de una skin
                 }
             }
+
         }
-    }
+      }
+//     } else if (playerInfo.monedas < skin.cost) {
+//       alert('No tienes suficientes monedas para comprar esta skin. ¡Ve a jugar!');
+//     } else {
+//       const comprar = confirm(`¿Quieres comprar la skin ${skin.name}?`);
+//       if (comprar) {
+//         request.playerInfo = playerInfo;
+//         request.request = 'buySkin';
+//         request.skinName = skin.name;
+//         request.purchaseInfo = selectedSkin;
+//         console.log(`Request al backend para comprar la skin ${skin.name}`, request);
+//         // y ahora se manda al backend la peticion de compra de una skin
+//       }
+//     }
+//   }
 
   return (
         <div className='contenedor-skins'>

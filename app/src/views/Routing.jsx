@@ -15,6 +15,7 @@ import CrearLobbyPublico from './Lobbys/CrearLobbyPublico';
 import UnirseLobbyPrivado from './Lobbys/UnirseLobbyPrivado';
 import UnirseLobbyPublico from './Lobbys/UnirseLobbyPublico';
 import Usuario from './Usuario';
+import Admin from './Admin';
 import Estadisticas from './Estadisticas';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -42,6 +43,7 @@ export default function Routing() {
                     <Route path={'/usuario'} element={<Usuario/>} />
                     <Route path={'/estadisticas'} element={<Estadisticas/>} />
                     <Route path={'/esperando'} element={<EsperandoJugadores/>} />
+                    <Route path={'/admin'} element={<Admin/>} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

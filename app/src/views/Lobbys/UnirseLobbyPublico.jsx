@@ -5,6 +5,7 @@ import BackButton from '../../components/buttons/BackButton';
 import InputBox from '../../components/input_box';
 import StandardButton from '../../components/buttons/Boton_estandar';
 import { UserContext } from '../../assets/UserContext';
+import axios from 'axios';
 
 const response = {
   status: 200,
@@ -49,7 +50,7 @@ export default function UnirseLobbyPublico() {
                 </div>
             </div>
             <div className='foto'>
-                <img src={'../src/assets/images/logo.png'} className="contenedor-foto" />
+                <img src={'../public/images/logo.png'} className="contenedor-foto" />
             </div>
         </div>
   );

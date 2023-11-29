@@ -1,9 +1,9 @@
 import '../assets/styles/style_paginas_principales.css';
 import { useEffect, useState } from 'react';
 import '../assets/styles/Reglas.css';
-import arrow_izquierda from '../assets/images/arrow_izquierda.png';
-import arrow_derecha from '../assets/images/arrow_derecha.png';
-import moneda from '../assets/images/moneda.png';
+import arrow_izquierda from '../../public/images/arrow_izquierda.png';
+import arrow_derecha from '../../public/images/arrow_derecha.png';
+import moneda from '../../public/images/moneda.png';
 
 import BackButton from '../components/buttons/BackButton';
 import Pagina_1 from '../components/reglas/Pagina_1';
@@ -59,7 +59,7 @@ export default function Reglas() {
 
             </div>
             <div className='foto-reglas'>
-                <img src={'../src/assets/images/logo2.png'} className="contenedor-foto" />
+                <img src={'../public/images/logo2.png'} className="contenedor-foto" />
             </div>
         </div>
   );

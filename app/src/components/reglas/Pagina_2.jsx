@@ -1,6 +1,6 @@
-import bomba from '../../assets/images/bomba2.png';
-import vida from '../../assets/images/vida.png';
-import fuego from '../../assets/images/fuego.png';
+import bomba from '../../../public/images/bomba2.png';
+import vida from '../../../public/images/vida.png';
+import fuego from '../../../public/images/fuego.png';
 
 export default function Pagina_2() {
   return (

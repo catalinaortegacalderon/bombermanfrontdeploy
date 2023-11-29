@@ -27,7 +27,7 @@ export default function IniciarPartida() {
                     </div>
                 </div>
                 <div className='box derecha'>
-                    <img src={'../src/assets/images/logo.png'} className="contenedor-foto" />
+                    <img src={'../public/images/logo.png'} className="contenedor-foto" />
                 </div>
             </div>
         </div>

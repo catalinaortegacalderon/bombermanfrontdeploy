@@ -39,6 +39,7 @@ export default function EsperandoJugadores() {
           history('/partida');
         }
         if (contador == 20) {
+          contador = 0;
           history('/partida');
         }
         if (prevDots === '...') {

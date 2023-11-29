@@ -31,7 +31,8 @@ export default function InicioRegistrado() {
                         <a href='/tienda' onClick={(e) => handleNavigation(e, '/tienda')} className='boton-color-2'>Tienda</a>
                         <a href='/usuario' onClick={(e) => handleNavigation(e, '/usuario')} className='boton-color-3'>Usuario</a>
                         <a href='/estadisticas' onClick={(e) => handleNavigation(e, '/estadisticas')} className='boton-color-4'>Estadísticas</a>
-                        <a href='/' onClick={handleLogout} className='boton-color-5'>Salir</a>  {/* Updated this line */}
+                        <a href='/estadisticas' onClick={(e) => handleNavigation(e, '/admin')} className='boton-color-5'>Configuración de admin</a>
+                        <a href='/' onClick={handleLogout} className='boton-color-6'>Salir</a>  {/* Updated this line */}
                     </div>
                 </div>
                 <div className='box derecha'>

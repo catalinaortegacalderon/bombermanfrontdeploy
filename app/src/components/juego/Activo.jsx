@@ -1,5 +1,5 @@
 import '../../assets/styles/components/juego/Activo.css';
-import jugadorImg from '../../assets/images/jugador.png';
+import jugadorImg from '../../../public/images/jugador.png';
 
 export default function Activo() {
   return (

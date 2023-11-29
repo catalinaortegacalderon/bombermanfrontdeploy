@@ -1,6 +1,6 @@
 import '../../assets/styles/components/juego/Vidas.css';
 import React, { useContext } from 'react';
-import vidaImg from '../../assets/images/vida.png';
+import vidaImg from '../../../public/images/vida.png';
 import { GameContext } from '../../views/Partida';
 
 export default function Vidas() {

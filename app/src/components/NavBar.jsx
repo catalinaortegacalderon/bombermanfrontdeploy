@@ -5,10 +5,12 @@ import { UserContext } from '../assets/UserContext';
 
 export default function NavBar() {
   const { userName, setUserName } = useContext(UserContext);
+  const { jwtoken, setJwtoken } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     setUserName('');
+    setJwtoken('');
     navigate('/');
   };
 

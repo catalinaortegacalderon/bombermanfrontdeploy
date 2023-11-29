@@ -1,6 +1,6 @@
-import arrow_keys from '../../assets/images/rules/arrow_keys.png';
-import spacebar from '../../assets/images/rules/space_bar.png';
-import enter_key from '../../assets/images/rules/enter_key.png';
+import arrow_keys from '../../../public/images/rules/arrow_keys.png';
+import spacebar from '../../../public/images/rules/space_bar.png';
+import enter_key from '../../../public/images/rules/enter_key.png';
 
 export default function Pagina_3() {
   return (

@@ -1,12 +1,12 @@
 import '../../assets/styles/components/juego/Celda.css';
-import jugadorImg from '../../assets/images/jugador.png';
-import ladrilloImg from '../../assets/images/ladrillo.png';
-import bombaImg from '../../assets/images/bomba.png';
-import corazonImg from '../../assets/images/vida.png';
-import bombaRecogerImg from '../../assets/images/bomba2.png';
-import monedaImg from '../../assets/images/moneda.png';
-import fuegoImg from '../../assets/images/fuego.png';
-import banderaImg from '../../assets/images/bandera.png';
+import jugadorImg from '../../../public/images/jugador.png';
+import ladrilloImg from '../../../public/images/ladrillo.png';
+import bombaImg from '../../../public/images/bomba.png';
+import corazonImg from '../../../public/images/vida.png';
+import bombaRecogerImg from '../../../public/images/bomba2.png';
+import monedaImg from '../../../public/images/moneda.png';
+import fuegoImg from '../../../public/images/fuego.png';
+import banderaImg from '../../../public/images/bandera.png';
 
 export default function Celda(props) {
   return (

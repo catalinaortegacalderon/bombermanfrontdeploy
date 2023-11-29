@@ -1,5 +1,5 @@
-import moneda from '../../assets/images/moneda.png';
-import ladrillo from '../../assets/images/ladrillo.png';
+import moneda from '../../../public/images/moneda.png';
+import ladrillo from '../../../public/images/ladrillo.png';
 
 export default function Pagina_4() {
   return (

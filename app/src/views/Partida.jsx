@@ -11,47 +11,61 @@ import { UserContext } from '../assets/UserContext';
 
 export const GameContext = createContext();
 const GameProvider = ({ children }) => {
-  const [bombas, setBombas] = useState(informacion.bombas);
-  const [corazones, setCorazones] = useState(informacion.corazones);
-  return (
+    const [bombas, setBombas] = useState(informacion.bombas);
+    const [corazones, setCorazones] = useState(informacion.corazones);
+    return (
         <GameContext.Provider value={{
-          bombas, setBombas, corazones, setCorazones,
+            bombas, setBombas, corazones, setCorazones,
         }}>
             {children}
         </GameContext.Provider>
-  );
+    );
 };
 
 export default function Partida() {
-  const { userName } = useContext(UserContext);
-  const { nombreLobby } = useContext(UserContext);
+    const { userName } = useContext(UserContext);
+    const { nombreLobby } = useContext(UserContext);
 
-  return (
-        <div className='partida'>
-            <div className='fila1'>
-                <h1>Partida de {userName}, lobby {nombreLobby}</h1>
-            </div>
-            <GameProvider>
-                <div className='fila2'>
-                    <div className='columna'>
-                        <Bombas /> {/* columna de bombas del jugador */}
-                    </div>
-                    <div className='columna'>
-                        <Vidas />  {/* columna de vidas del jugador */}
-                    </div>
-                    <div className='columna'>
-                        <Tablero /> {/* tablero de juego */}
-                    </div>
-                    <div className='columna'>
-                        <Timer titulo='TOTAL' /> {/* tiempo restante de la partida */}
-                        <Timer titulo='TURNO' /> {/* tiempo restante del turno actual */}
-                        <Activo />  {/* jugador activo */}
+    if (userName === '') {
+        return (
+            <div className='login'>
+                <div className='contenedor-usuario'>
+                    <h1>Debes iniciar sesión o registrarte para jugar</h1>
+                    <div className='contenedor-botones'>
+                        <BackButton />
                     </div>
                 </div>
-            </GameProvider>
-            <div className='fila3'>
-                <BackButton /> {/* boton para volver a la pagina anterior */}
             </div>
-        </div>
-  );
+        );
+    }
+    else {
+        return (
+            <div className='partida'>
+                <div className='fila1'>
+                    <h1>Partida de {userName}, lobby {nombreLobby}</h1>
+                </div>
+                <GameProvider>
+                    <div className='fila2'>
+                        <div className='columna'>
+                            <Bombas /> {/* columna de bombas del jugador */}
+                        </div>
+                        <div className='columna'>
+                            <Vidas />  {/* columna de vidas del jugador */}
+                        </div>
+                        <div className='columna'>
+                            <Tablero /> {/* tablero de juego */}
+                        </div>
+                        <div className='columna'>
+                            <Timer titulo='TOTAL' /> {/* tiempo restante de la partida */}
+                            <Timer titulo='TURNO' /> {/* tiempo restante del turno actual */}
+                            <Activo />  {/* jugador activo */}
+                        </div>
+                    </div>
+                </GameProvider>
+                <div className='fila3'>
+                    <BackButton /> {/* boton para volver a la pagina anterior */}
+                </div>
+            </div>
+        );
+    }
 }

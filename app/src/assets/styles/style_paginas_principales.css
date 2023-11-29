@@ -20,6 +20,7 @@ body {
 
 .izquierda {
     font-size: calc(1.2px + 1vw);
+    height: auto;
 }
 
 .derecha {
@@ -111,6 +112,16 @@ a:hover {
     cursor: pointer;
     transition: 0.5s;
 }
+
+.contenedor-botones-y-titulo .boton-color-6 {
+    background-color: #C51AA3;
+}
+.contenedor-botones-y-titulo .boton-color-6:hover {
+    background-color: #d667b9;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 
 /* Cosas del componente footer*/
 

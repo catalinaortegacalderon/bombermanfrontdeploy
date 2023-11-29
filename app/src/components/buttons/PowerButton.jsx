@@ -1,6 +1,6 @@
 import '../../assets/styles/components/buttons/PowerButton.css';
-import img_vida from '../../assets/images/vida.png';
-import img_bomba from '../../assets/images/bomba.png';
+import img_vida from '../../../public/images/vida.png';
+import img_bomba from '../../../public/images/bomba.png';
 
 export default function PowerButton(props) {
   // voy a tener que pasar el tipo de boton, y cuanto vale.
