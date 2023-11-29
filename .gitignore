@@ -9,7 +9,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# node_modules
 app
 dist
 dist-ssr
@@ -23,7 +23,7 @@ dist-ssr
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
+*.sln32
 *.sw?
 
 
