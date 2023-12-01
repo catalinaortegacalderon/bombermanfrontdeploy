@@ -36,7 +36,7 @@ export default function InicioRegistrado() {
                     </div>
                 </div>
                 <div className='box derecha'>
-                    <img src={'../src/assets/images/logo.png'} />
+                    <img src={'../public/images/logo.png'} />
                 </div>
             </div>
         </div>

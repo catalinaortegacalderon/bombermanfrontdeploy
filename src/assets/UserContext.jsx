@@ -9,10 +9,13 @@ export const UserProvider = ({ children }) => {
   const [id, setId] = useState('');
   const [idpartida, setIdpartida] = useState('');
   const [idtablero, setIdtablero] = useState('');
+  const [numjugador, setNumjugador] = useState('');
+  const [turno, setTurno] = useState('');
+  const [idjugador, setIdjugador] = useState('');
 
   return (
         <UserContext.Provider value={{
-          userName, setUserName, nombreLobby, setNombreLobby, jwtoken, setJwtoken, id, setId, idpartida, setIdpartida, idtablero, setIdtablero
+          userName, setUserName, nombreLobby, setNombreLobby, jwtoken, setJwtoken, id, setId, idpartida, setIdpartida, idtablero, setIdtablero, numjugador, setNumjugador, turno, setTurno, idjugador, setIdjugador
         }}>
             {children}
         </UserContext.Provider>

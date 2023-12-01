@@ -320,3 +320,20 @@ a:hover {
     height: 35vh;
     line-height: 1.5;
 }
+
+
+.button-container {
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    margin-right: 10px;
+    background-color: white;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .button-container button.selected {
+    background-color: lightblue;
+  }

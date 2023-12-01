@@ -50,3 +50,9 @@
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
 }
+
+.money-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

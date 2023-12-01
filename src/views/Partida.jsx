@@ -56,9 +56,7 @@ export default function Partida() {
                             <Tablero /> {/* tablero de juego */}
                         </div>
                         <div className='columna'>
-                            <Timer titulo='TOTAL' /> {/* tiempo restante de la partida */}
-                            <Timer titulo='TURNO' /> {/* tiempo restante del turno actual */}
-                            <Activo />  {/* jugador activo */}
+                            
                         </div>
                     </div>
                 </GameProvider>

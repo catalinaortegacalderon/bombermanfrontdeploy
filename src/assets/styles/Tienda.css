@@ -3,23 +3,57 @@
 .box-arriba {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 50px 150px;
     font-family: "Lucida Console", Monaco, monospace;
     color: #FE0964;
     font-size: calc(6px + 1vw);
 }
 
-.contenido-derecha {
+
+.contenido-derecha,
+.contenido-almedio,
+.contenido-izquierda {
+    flex: 1;
     display: flex;
     align-items: center;
 }
 
-.contenido-izquierda {
-    height: 100%;
+.contenido-derecha {
+    justify-content: right;
+}
+
+
+.contenido-almedio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+}
+
+
+.mostrar-bomba,
+.mostrar-vida {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
+
+.mostrar-bomba img {
+    display: block;
+    width: 10%;
+    height: auto;
+}
+
+.mostrar-vida img {
+    display: block;
+    width: 10%;
+    height: auto;
+}
+
+
+
 
 .contenido-izquierda img {
     display: block;

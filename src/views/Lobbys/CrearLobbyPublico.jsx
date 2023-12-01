@@ -7,67 +7,93 @@ import StandardButton from '../../components/buttons/Boton_estandar';
 import { UserContext } from '../../assets/UserContext';
 import axios from 'axios';
 
-// 201 creado con exito
-// 400 error
-
-// esta es la response que se recibe al crear la partida
-const response = {
-  status: 201,
-  body: {
-    id: 4,
-    nombre: 'partidadeprueba5',
-    contraseña: 'a',
-    cantidad_jugadores: 3,
-    updatedAt: '2023-10-30T17:36:42.247Z',
-    createdAt: '2023-10-30T17:36:42.247Z',
-  },
-};
-
-// estructura para crear tablero
-// {
-//     "partida_id": 1,
-//     "alto": 12,
-//     "ancho": 15,
-//     "tiempo": 60,
-//     "jugador1": 1,
-//     "updatedAt": "2023-10-31T13:01:07.968Z",
-//     "createdAt": "2023-10-31T13:01:07.968Z"
-// }
-
-// esto obtenerlo por el contexto, debería estar guardado
-
-// TODO ESTO SE GUARDA, LA INFO DE USUARIO, AL REGISTRARSE O INICIAR SESION
-const self_id = 1;
-const self_vida_base = 8;
-const self_bombas_base = 6;
-
-// datos jugador
-// {
-//     "id_usuario": 1,
-//     "id_partida": 1,
-//     "vida_restante": 10,
-//     "bombas_restantes": 5,
-//     "posicion": [0,0]
-//     }
-
 export default function CrearLobbyPublico() {
   const { nombreLobby, setNombreLobby } = useContext(UserContext);
   const history = useNavigate(); // hook para navegar paths
   const { jwtoken, setJwtoken } = useContext(UserContext);
-  const {idpartida, setIdpartida} = useContext(UserContext);
-  const {idtablero, setIdtablero} = useContext(UserContext);
-  const { id, setId} = useContext(UserContext);
+  const { idpartida, setIdpartida } = useContext(UserContext);
+  const { idtablero, setIdtablero } = useContext(UserContext);
+  const {idjugador, setIdjugador} = useContext(UserContext);
+  const { id, setId } = useContext(UserContext);
   const { userName } = useContext(UserContext);
+  const { numjugador, setNumjugador } = useContext(UserContext);
+  const [matrizSeleccionada, setMatrizSeleccionada] = useState([
+    ['1', 'L', 'L', 'M', '', 'L', 'B', 'F', '', '', 'L', 'L', '', '', ''],
+    ['', '', '', 'L', 'L', 'L', 'L', 'L', 'L', 'L', '', '', 'M', 'L', ''],
+    ['L', 'L', 'L', 'L', '', 'L', '', '', 'L', 'A', 'L', 'L', 'L', '', ''],
+    ['', 'B', 'L', '', 'C', 'L', '', 'L', '', 'L', 'L', '', 'L', 'L', 'L'],
+    ['', 'L', 'F', '', 'L', 'L', 'A', 'L', 'F', 'L', '', '', 'L', '', 'B'],
+    ['', '', 'L', 'L', '', '', 'L', '', '', 'L', 'L', '', '', 'L', ''],
+    ['', 'L', 'A', 'F', 'L', '', 'B', 'L', 'L', 'L', 'A', 'L', 'L', 'C', 'F'],
+    ['L', 'L', 'L', 'C', '', 'L', '', 'L', 'F', 'L', '', 'L', 'L', '', 'L'],
+    ['', 'M', '', 'L', '', 'L', 'L', 'L', '', 'L', 'B', 'L', '', 'L', ''],
+    ['L', 'L', 'L', 'L', 'L', '', 'A', 'L', '', '', 'L', 'L', '', '', 'L'],
+    ['', '', '', '', 'L', 'F', 'L', '', 'L', 'L', 'C', 'M', 'L', 'L', ''],
+    ['', 'L', 'L', '', 'L', 'L', '', 'L', 'B', '', 'L', '', 'L', '', ''],
+  ]);
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
+  const manejarSeleccion = (opcion) => {
+    if (opcion === '1') {
+      setMatrizSeleccionada([
+        ['1', '', '', 'M', '', 'L', 'B', 'F', '', '', 'L', 'L', '', '', ''],
+        ['', '', '', 'L', 'L', 'L', 'L', 'L', 'L', 'L', '', '', 'M', 'L', ''],
+        ['L', 'L', 'L', 'L', '', 'L', '', 'C', 'L', 'A', 'L', 'L', 'L', '', ''],
+        ['', 'B', 'L', '', 'C', '', '', 'L', '', 'L', 'L', '', 'L', 'L', 'L'],
+        ['', 'L', 'F', '', 'L', '', 'A', 'L', 'F', 'L', '', 'C', 'L', '', 'B'],
+        ['', '', 'L', 'L', '', '', 'L', '', 'C', 'L', 'L', '', '', 'L', ''],
+        ['', 'L', 'A', 'F', 'L', '', 'B', 'L', 'L', 'L', 'A', '', 'L', 'C', 'F'],
+        ['L', 'L', 'L', 'C', '', '', '', 'L', 'F', 'L', '', '', 'L', '', 'L'],
+        ['', 'M', 'B', 'L', 'C', '', 'L', 'L', '', 'L', 'B', '', '', 'L', ''],
+        ['L', '', '', '', '', '', 'A', 'L', '', 'C', 'L', '', '', '', 'L'],
+        ['', '', '', 'C', 'L', 'F', 'L', '', 'L', '', 'C', 'M', 'L', 'L', ''],
+        ['', 'L', 'L', '', 'L', 'L', '', 'L', 'B', 'B', 'L', '', 'L', '', ''],
+      ]);
+    }
+    else if (opcion === '2') {
+      setMatrizSeleccionada([
+        ['1', 'L', '', 'M', '', 'L', 'B', 'F', '', '', 'L', '', '', '', ''],
+        ['', '', '', 'L', 'L', 'L', 'L', 'L', 'L', 'L', '', '', 'M', 'L', ''],
+        ['L', 'L', 'L', '', '', 'L', '', '', 'L', 'A', 'L', '', 'L', '', ''],
+        ['', 'B', 'L', '', 'C', 'L', '', 'L', '', 'L', 'L', '', '', 'L', 'L'],
+        ['', '', 'F', '', '', '', 'A', 'L', 'F', '', '', '', 'L', '', 'B'],
+        ['', '', 'L', 'L', '', '', 'L', '', '', 'L', 'L', '', '', '', ''],
+        ['', '', 'A', 'F', '', '', 'B', '', 'L', 'L', 'A', '', 'L', 'C', 'F'],
+        ['L', '', 'L', 'C', '', 'L', '', 'L', 'F', 'L', '', '', 'L', '', 'L'],
+        ['', 'M', '', '', '', 'L', 'L', 'L', '', 'L', 'B', '', '', 'L', ''],
+        ['L', 'L', 'L', 'L', 'L', '', 'A', 'L', '', '', 'L', 'L', '', '', 'L'],
+        ['', '', '', '', 'L', 'F', 'L', '', 'L', '', 'C', 'M', 'L', 'L', ''],
+        ['', 'L', 'L', '', '', 'L', '', 'L', 'B', '', 'L', '', 'L', '', ''],
+      ]);
+    }
+    else if (opcion === '3') {
+      setMatrizSeleccionada([
+        ['1', 'L', 'L', 'M', '', 'L', 'B', 'F', '', '', 'L', 'L', '', '', ''],
+        ['', '', '', 'L', 'L', 'L', 'L', 'L', 'L', 'L', '', '', 'M', 'L', ''],
+        ['L', 'L', 'L', 'L', '', 'L', '', '', 'L', 'A', 'L', 'L', 'L', '', ''],
+        ['', 'B', 'L', '', 'C', 'L', '', 'L', '', 'L', 'L', '', 'L', 'L', 'L'],
+        ['', 'L', 'F', '', 'L', 'L', 'A', 'L', 'F', 'L', '', '', 'L', '', 'B'],
+        ['', '', 'L', 'L', '', '', 'L', '', '', 'L', 'L', '', '', 'L', ''],
+        ['', 'L', 'A', 'F', 'L', '', 'B', 'L', 'L', 'L', 'A', 'L', 'L', 'C', 'F'],
+        ['L', 'L', 'L', 'C', '', 'L', '', 'L', 'F', 'L', '', 'L', 'L', '', 'L'],
+        ['', 'M', '', 'L', '', 'L', 'L', 'L', '', 'L', 'B', 'L', '', 'L', ''],
+        ['L', 'L', 'L', 'L', 'L', '', 'A', 'L', '', '', 'L', 'L', '', '', 'L'],
+        ['', '', '', '', 'L', 'F', 'L', '', 'L', 'L', 'C', 'M', 'L', 'L', ''],
+        ['', 'L', 'L', '', 'L', 'L', '', 'L', 'B', '', 'L', '', 'L', '', ''],
+      ]);
 
-
+    }
+    setOpcionSeleccionada(opcion);
+    console.log(opcionSeleccionada);
+  };
 
   const Redirect = async () => {
+    setNumjugador(1);
     try {
-      if (nombreLobby === '' ) {
+      if (nombreLobby === '') {
         alert('Debes rellenar todos los campos');
       } else {
 
-        console.log("IMRPIMIENDO EL ID",id);
+        console.log("IMRPIMIENDO EL ID", id);
 
         const infousuario = await axios({
           method: 'get',
@@ -91,7 +117,7 @@ export default function CrearLobbyPublico() {
         });
         setIdpartida(respuesta1.data.id);
         console.log('Respuesta 1:', respuesta1.data);
-  
+
         // Segunda petición
         const respuesta2 = await axios({
           method: 'post',
@@ -99,6 +125,22 @@ export default function CrearLobbyPublico() {
           data: {
             partida_id: respuesta1.data.id,
             jugador1: id,
+            jugador3: 0,
+            jugador4: id,
+            matriz: [
+              ['', 'L', 'L', 'M', '', 'L', 'B', 'F', '', '', 'L', 'L', '', '', ''],
+              ['', '', '', 'L', 'L', 'L', 'L', 'L', 'L', 'L', '', '', 'M', 'L', ''],
+              ['L', 'L', 'L', 'L', '', 'L', '', '', 'L', 'A', 'L', 'L', 'L', '', ''],
+              ['', 'B', 'L', '', 'C', 'L', '', 'L', '', 'L', 'L', '', 'L', 'L', 'L'],
+              ['', 'L', 'F', '', 'L', 'L', 'A', 'L', 'F', 'L', '', '', 'L', '', 'B'],
+              ['', '', 'L', 'L', '', '', 'L', '', '', 'L', 'L', '', '', 'L', ''],
+              ['', 'L', 'A', 'F', 'L', '', 'B', 'L', 'L', 'L', 'A', 'L', 'L', 'C', 'F'],
+              ['L', 'L', 'L', 'C', '', 'L', '', 'L', 'F', 'L', '', 'L', 'L', '', 'L'],
+              ['', 'M', '', 'L', '', 'L', 'L', 'L', '', 'L', 'B', 'L', '', 'L', ''],
+              ['L', 'L', 'L', 'L', 'L', '', 'A', 'L', '', '', 'L', 'L', '', '', 'L'],
+              ['', '', '', '', 'L', 'F', 'L', '', 'L', 'L', 'C', 'M', 'L', 'L', ''],
+              ['', 'L', 'L', '', 'L', 'L', '', 'L', 'B', '', 'L', '', 'L', '', ''],
+            ]
           },
           headers: {
             'Authorization': `Bearer ${jwtoken}`
@@ -106,7 +148,7 @@ export default function CrearLobbyPublico() {
         });
         setIdtablero(respuesta2.data.id);
         console.log('Respuesta 2:', respuesta2.data);
-  
+
         // Tercera petición
         const respuesta3 = await axios({
           method: 'post',
@@ -122,9 +164,11 @@ export default function CrearLobbyPublico() {
           }
         });
         console.log('Respuesta 3:', respuesta3.data);
-  
+        await setIdjugador(respuesta3.data.id);
+
         alert('lobby creado con éxito');
         // Redirigir a otra página
+        console.log('idpartida:', idpartida);
         history('/esperando');
       }
     } catch (error) {
@@ -132,24 +176,45 @@ export default function CrearLobbyPublico() {
       if (error.response && error.response.status === 409) {
         alert('Nombre ocupado');
       } else {
-        alert('Este nombre ya esta ocupado, por favor utiliza otro');
+        alert('Nombre ocupado');
       }
     }
   };
 
   return (
-        <div className='login'>
-            <div className='contenedor-lobby'>
-                <h1>Iniciar Lobby Público</h1>
-                <InputBox name="Nombre Lobby" setter={setNombreLobby} value={nombreLobby}/>
-                <div className='contenedor-botones'>
-                    <BackButton />
-                    <StandardButton text='Jugar' redirect_function={Redirect} />
-                </div>
-            </div>
-            <div className='foto'>
-                <img src={'../public/images/logo.png'} className="contenedor-foto" />
-            </div>
+    <div className='login'>
+      <div className='contenedor-lobby'>
+        <h1>Iniciar Lobby Público</h1>
+        <InputBox name="Nombre Lobby" setter={setNombreLobby} value={nombreLobby} />
+        <div className="button-container">
+  <h3>Elige una opción de tablero:</h3>
+  <button
+    onClick={() => manejarSeleccion('1')}
+    className={opcionSeleccionada === '1' ? 'selected' : ''}
+  >
+    Fácil
+  </button>
+  <button
+    onClick={() => manejarSeleccion('2')}
+    className={opcionSeleccionada === '2' ? 'selected' : ''}
+  >
+    Intermedio
+  </button>
+  <button
+    onClick={() => manejarSeleccion('3')}
+    className={opcionSeleccionada === '3' ? 'selected' : ''}
+  >
+    Difícil
+  </button>
         </div>
+        <div className='contenedor-botones'>
+          <BackButton />
+          <StandardButton text='Jugar' redirect_function={Redirect} />
+        </div>
+      </div>
+      <div className='foto'>
+        <img src={'../public/images/logo.png'} className="contenedor-foto" />
+      </div>
+    </div>
   );
 }
