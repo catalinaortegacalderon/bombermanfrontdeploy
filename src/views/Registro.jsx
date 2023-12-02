@@ -6,6 +6,7 @@ import StandardButton from '../components/buttons/Boton_estandar';
 import InputBox from '../components/input_box';
 import { UserContext } from '../assets/UserContext';
 import axios from 'axios';
+import logoImg from '../../public/images/logo.png';
 
 // simulando que llega una response
 // const response2 = {
@@ -103,7 +104,7 @@ axios.post(`${import.meta.env.VITE_BACKEND_URL}/signup`, dataToSend)
   return (
         <div className='login'>
             <div className='foto'>
-                <img src={'../public/images/logo.png'} className="contenedor-foto" />
+                <img src={logoImg} className="contenedor-foto" />
             </div>
             <div className='contenedor-registrarse'>
                 <h1>Registrarse</h1>

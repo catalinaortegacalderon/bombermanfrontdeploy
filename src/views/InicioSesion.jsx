@@ -6,6 +6,7 @@ import StandardButton from '../components/buttons/Boton_estandar';
 import InputBox from '../components/input_box';
 import { UserContext } from '../assets/UserContext';
 import axios from 'axios';
+import logoImg from '../../public/images/logo.png';
 
 
 
@@ -71,7 +72,7 @@ export default function InicioSesion() {
   return (
     <div className='login'>
       <div className='foto-iniciosesion'>
-        <img src={'../public/images/logo.png'} className="contenedor-foto" />
+        <img src={logoImg} className="contenedor-foto" />
       </div>
       <div className='contenedor-iniciosesion'>
         <h1>Iniciar sesión</h1>

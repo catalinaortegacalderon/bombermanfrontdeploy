@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import { UserContext } from '../assets/UserContext';
+import logoImg from '../../public/images/logo.png';
 
 export default function InicioRegistrado() {
   const { userName, setUserName } = useContext(UserContext);
@@ -36,7 +37,7 @@ export default function InicioRegistrado() {
                     </div>
                 </div>
                 <div className='box derecha'>
-                    <img src={'../public/images/logo.png'} />
+                    <img src={logoImg} />
                 </div>
             </div>
         </div>

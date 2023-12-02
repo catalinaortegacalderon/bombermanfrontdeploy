@@ -6,6 +6,7 @@ import InputBox from '../../components/input_box';
 import StandardButton from '../../components/buttons/Boton_estandar';
 import { UserContext } from '../../assets/UserContext';
 import axios from 'axios';
+import logoImg from '../../public/images/logo.png';
 
 export default function CrearLobbyPublico() {
   const { nombreLobby, setNombreLobby } = useContext(UserContext);
@@ -210,7 +211,7 @@ export default function CrearLobbyPublico() {
         </div>
       </div>
       <div className='foto'>
-        <img src={'../public/images/logo.png'} className="contenedor-foto" />
+        <img src={logoImg} className="contenedor-foto" />
       </div>
     </div>
   );
