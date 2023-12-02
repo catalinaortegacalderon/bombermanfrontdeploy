@@ -7,7 +7,7 @@ export default function Inicio() {
                 <div className='box izquierda'>
                     <div className='contenedor-botones-y-titulo'>
                         <h1>Bomber</h1>
-                        <h1>Checho Man</h1>
+                        <h1>Checho Man!</h1>
                         <br/>
                         <a href='/iniciosesion' className='boton-color-1'>Iniciar sesión</a>
                         <a href='/registro' className='boton-color-2'>Registrarse</a>
@@ -16,7 +16,7 @@ export default function Inicio() {
                     </div>
                 </div>
                 <div className='box derecha'>
-                    <img src={'../../public/images/logo.png'}/>
+                    <img src={'../../public/images/jugador.png'}/>
                 </div>
             </div>
         </div>
