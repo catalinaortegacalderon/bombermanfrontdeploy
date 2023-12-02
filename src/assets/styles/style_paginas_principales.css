@@ -337,3 +337,37 @@ a:hover {
   .button-container button.selected {
     background-color: lightblue;
   }
+
+#boton-facil {
+    color: #FE0964;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: calc(1px + 1vw);
+    margin: 10px;
+    border: 1px solid #FE0964;
+}
+
+#boton-intermedio {
+    color: #FE0964;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: calc(1px + 1vw);
+    margin: 10px;
+    border: 1px solid #FE0964;
+}
+
+#boton-dificil {
+    color: #FE0964;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: calc(1px + 1vw);
+    margin: 10px;
+    border: 1px solid #FE0964;
+}
+
+.contenedor-botones button.selected {
+    background-color: rgb(234, 187, 244);
+}

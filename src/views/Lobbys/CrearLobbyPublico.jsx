@@ -186,26 +186,23 @@ export default function CrearLobbyPublico() {
       <div className='contenedor-lobby'>
         <h1>Iniciar Lobby Público</h1>
         <InputBox name="Nombre Lobby" setter={setNombreLobby} value={nombreLobby} />
-        <div className="button-container">
-  <h3>Elige una opción de tablero:</h3>
-  <button
-    onClick={() => manejarSeleccion('1')}
-    className={opcionSeleccionada === '1' ? 'selected' : ''}
-  >
-    Fácil
-  </button>
-  <button
-    onClick={() => manejarSeleccion('2')}
-    className={opcionSeleccionada === '2' ? 'selected' : ''}
-  >
-    Intermedio
-  </button>
-  <button
-    onClick={() => manejarSeleccion('3')}
-    className={opcionSeleccionada === '3' ? 'selected' : ''}
-  >
-    Difícil
-  </button>
+        <h3>Elige una opción de tablero:</h3>
+        <div className="contenedor-botones">
+          <button id='boton-facil'
+            onClick={() => manejarSeleccion('1')}
+            className={opcionSeleccionada === '1' ? 'selected' : ''}>
+            Fácil
+          </button>
+          <button id='boton-intermedio'
+            onClick={() => manejarSeleccion('2')}
+            className={opcionSeleccionada === '2' ? 'selected' : ''}>
+            Intermedio
+          </button>
+          <button id='boton-dificil'
+            onClick={() => manejarSeleccion('3')}
+            className={opcionSeleccionada === '3' ? 'selected' : ''}>
+            Difícil
+          </button>
         </div>
         <div className='contenedor-botones'>
           <BackButton />

@@ -18,6 +18,7 @@ export default function Tablero() {
   const [matriz, setMatriz] = useState(JSON.parse(JSON.stringify(matrizOriginal)));
   const { jwtoken, setJwtoken } = useContext(UserContext);
   const { idtablero } = useContext(UserContext); { /* obtengo el id del tablero */ }
+  const { userName } = useContext(UserContext); { /* obtengo el nombre de usuario */ }
   const { idpartida } = useContext(UserContext); { /* obtengo el id de la partida */ }
   const { nombreLobby } = useContext(UserContext); { /* obtengo el nombre de la partida/lobby */ }
   const { id } = useContext(UserContext); { /* obtengo el id del jugador */ }
@@ -86,6 +87,29 @@ export default function Tablero() {
     }
   };
 
+  const actualizarMonedas = async () => {
+    try {
+      const respuestaGet = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/usuarios/${userName}`, {
+        headers: {
+          'Authorization': `Bearer ${jwtoken}`
+        }
+      });
+      const monedasActual = respuestaGet.data.monedas;
+
+      const monedasNuevo = monedasActual + 1;
+      await axios.patch(`${import.meta.env.VITE_BACKEND_URL}/usuarios/${id}`, {
+        monedas: monedasNuevo
+      }, {
+        headers: {
+          'Authorization': `Bearer ${jwtoken}`
+        }
+      });
+      console.log('Monedas actualizado:', monedasNuevo);
+    } catch (error) {
+      console.error('Error al actualizar monedas:', error);
+    }
+  };
+
   const chequearMatriz = () => {
     const { fila, columna } = posicion;
     if (matriz[fila][columna] === 'C') {
@@ -106,6 +130,7 @@ export default function Tablero() {
       }
     } else if (matriz[fila][columna] === 'M') {
       setMonedas(monedas + 1);
+      actualizarMonedas();
       matriz[fila][columna] = '';
     } else if (matriz[fila][columna] === 'A') {
       actualizarBanderas();
@@ -114,6 +139,27 @@ export default function Tablero() {
   };
 
   const mandarMatriz = async () => {
+    if (numjugador === 1) {
+      for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+          if (matriz[i][j] === '1') {
+            matriz[i][j] = '';
+          }
+        }
+      }
+      matriz[posicion.fila][posicion.columna] = '1';
+    }
+    else if (numjugador === 2) {
+      for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+          if (matriz[i][j] === '2') {
+            matriz[i][j] = '';
+          }
+        }
+      }
+      matriz[posicion.fila][posicion.columna] = '2';
+    }
+
     try {
       const respuesta = await axios.patch(`${import.meta.env.VITE_BACKEND_URL}/tablero/${idpartida}`, {
         matriz: matriz,
@@ -129,6 +175,12 @@ export default function Tablero() {
     try {
       const respuesta = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/tablero/${idpartida}`);
       setMatriz(respuesta.data.matriz);
+      if (numjugador === 1) {
+        matriz[11][14] = '2';
+      }
+      else if (numjugador === 2) {
+        matriz[0][0] = '1';
+      }
       console.log('Matriz cargada:', respuesta.data.matriz);
     } catch (error) {
       console.error('Error al cargar el tablero:', error);
@@ -332,6 +384,7 @@ export default function Tablero() {
               moneda={matriz[filaIndex][celdaIndex] === 'M'}
               fuego={matriz[filaIndex][celdaIndex] === 'F'}
               bandera={matriz[filaIndex][celdaIndex] === 'A'}
+              ocupada2={(matriz[filaIndex][celdaIndex] === '1' || matriz[filaIndex][celdaIndex] === '2') && (matriz[filaIndex][celdaIndex] != numjugador.toString())}
             />
           ))}
         </div>

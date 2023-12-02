@@ -19,6 +19,7 @@ export default function Celda(props) {
       {props.moneda && !props.ocupada && <img src={monedaImg} alt="Moneda" />}
       {props.fuego && !props.ocupada && <img src={fuegoImg} alt="Fuego" />}
       {props.bandera && !props.ocupada && <img src={banderaImg} alt="Bandera" />}
+      {props.ocupada2 && <img src={jugadorImg} alt="Companero" />}
     </div>
   );
 }

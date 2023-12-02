@@ -42,7 +42,7 @@ export default function Partida() {
         return (
             <div className='partida'>
                 <div className='fila1'>
-                    <h1>Partida de {userName}, lobby {nombreLobby}</h1>
+                    <h1>Lobby {nombreLobby}</h1>
                 </div>
                 <GameProvider>
                     <div className='fila2'>
