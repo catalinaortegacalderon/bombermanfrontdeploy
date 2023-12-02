@@ -6,7 +6,7 @@ import InputBox from '../../components/input_box';
 import StandardButton from '../../components/buttons/Boton_estandar';
 import { UserContext } from '../../assets/UserContext';
 import axios from 'axios';
-import logoImg from '../../public/images/logo.png';
+import logoImg from '../../../public/images/logo.png';
 
 export default function CrearLobbyPublico() {
   const { nombreLobby, setNombreLobby } = useContext(UserContext);
